@@ -1,0 +1,84 @@
+@import '../../styles.scss';
+
+.chat{
+    padding: 20px;
+    height: 100vh;
+}
+// chat header
+.chat-header_user-img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    overflow: hidden;
+    img{
+        width: 100%;
+    }
+}
+.chat-header_user-name{
+    h3{
+        font-size: 23px;
+        text-transform: capitalize;
+    }
+    p{
+        color: $darkBlue;
+        font-weight: 500;
+        font-size: 12px;
+
+    }
+}
+.chat-header_settings{
+    font-size: 30px;
+    color: #555555;
+}
+// chat text list
+.sender-img ,.receiver-img{
+    img{
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+}
+.sender-text p ,.receiver-text p{
+    background-image: linear-gradient(to right, #80bef3 , $darkBlue);
+    border-radius: 10px;
+    color: #fff;
+    position: relative;
+    z-index: 99;
+    font-size: 14px;
+    line-height: 1.2;
+    max-width: 70%;
+    width: fit-content;
+}
+.receiver-text p{
+    background: none;
+    background-color: #fff;
+    color: $darkBlue;
+}
+.receiver{
+    direction: rtl;
+}
+
+ul{
+    height: 60vh;
+    overflow-y: auto;
+}
+// send input
+form {
+    .btn.btn-primary{
+        border-radius: 50%;
+        background-image: linear-gradient(to right, #80bef3 , $darkBlue);
+        border: none;
+    }
+   input{
+       border: none;
+       border-radius: 5px;
+       
+   }
+   .emoji{
+       background-color: transparent;
+       border: none;
+       font-size: 20px;
+       color: #555555;
+   }
+}
