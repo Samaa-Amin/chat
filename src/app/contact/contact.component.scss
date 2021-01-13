@@ -1,0 +1,91 @@
+@import '../../styles.scss';
+
+.contacts{
+    border-radius: 30px;
+    background-color: #fff;
+    box-shadow:4px 5px 12px rgba(32, 150, 237, 0.2);
+
+
+}
+.contacts-header{
+    button{
+        background-image: linear-gradient(to right, #80bef3 , $darkBlue);
+        border: none;
+    }
+}
+// contacts search
+.form-control.search{
+    border-radius: 30px;
+    height: 45px;
+    background-color: $lightBlue;
+    border: none;
+    background-image: url("https://assets.stickpng.com/images/585e4ae1cb11b227491c3393.png");
+    background-position: 25px;
+    background-size: 25px;
+    background-repeat: no-repeat;
+    padding-left: 60px;
+}
+// contact list
+ul{
+    padding: 0;
+    li{
+        list-style: none;
+        border-top: 1px solid $lightBlue; 
+       &.current{
+        background-color: $lightBlue;   
+        border-left: 3px solid $pink;  
+        position: relative;
+
+        &::after{
+            content: "";
+            width: 40px;
+            background-color: $lightBlue;
+            position: absolute;
+            right: -22px;
+            top: 0;
+            bottom: 0;
+        }   
+       }
+    }
+    
+}
+.contacts-list_image{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    img{
+        width: 100%
+    };
+}
+
+.contacts-list_name{
+    h3{
+        text-transform: capitalize;
+        font-size: 20px;
+
+    }
+    p{
+        opacity: 0.7;
+        font-size: 12px;
+        font-weight: 500;
+    }
+
+}
+.contacts-list_notification-number{
+    background-color: $pink;
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+    text-align: center;
+    color: #fff;
+    
+}
+
+.contacts-list_notification{
+    p{
+        opacity: 0.7;
+        font-size: 12px;
+        font-weight: 500;
+    }
+}
