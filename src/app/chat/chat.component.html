@@ -16,38 +16,21 @@
     </div>
     <!-- chat text -->
     <ul class="px-4">
-        <li class=" sender">
-            <div class="sender-row d-flex align-items-strat" >
-                <div class="sender-img ">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/67/Vector_Face_wearing_Spectacles.png" alt="">
-                </div>
-                
-                <div class="sender-text mx-3">
-                    <p class="m-0 mb-2  p-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus sunt modi facere explicabo magnam fuga dolore corporis suscipit odit optio !</p>
-                    <p class="m-0 mb-2  p-3">Lorem ipsum dolor sit</p>
-                </div>
-                
-            </div>
-        </li>
-
-        <li class=" receiver">
+        <li *ngFor="let user of chatText " [ngClass]="{'sender': user.msgStatus == 'sender' , 'receiver': user.msgStatus == 'receiver'}">
             <div class=" d-flex align-items-strat" >
-                <div class="receiver-img ">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/67/Vector_Face_wearing_Spectacles.png" alt="">
+                <div class="user-img ">
+                    <img src={{user.userImg}} alt="">
                 </div>
-                
-                <div class="receiver-text  mx-3">
-                    <p class="m-0 mb-2  p-3">Lorem ipsum dolor sit</p>
-                    <p class="m-0 mb-2  p-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus sunt modi facere explicabo magnam fuga dolore corporis suscipit odit optio !</p>
+                <div class="user-text mx-3 w-100">
+                    <p class="m-0 mb-2  p-3" *ngFor="let msg of user.content ">{{msg}} </p>
                 </div>
-                
             </div>
         </li>
     </ul>
     <!--send input -->
-    <form action="" class="d-flex justify-content-between">
+    <form action="" class="d-flex justify-content-between" [formGroup]="form" (ngSubmit)="submit()">
         <button type="button" class="btn btn-primary"><i class="fas fa-paperclip"></i></button>
-        <input type="text" class="form-control col-8" placeholder="Type a message" aria-label="Username" aria-describedby="basic-addon1">
+        <input formControlName="message"  type="text" class="form-control col-8" placeholder="Type a message" aria-label="Username" aria-describedby="basic-addon1">
         <button type="button" class="emoji p-0"><i class="far fa-smile"></i></button>
         <button type="submit" class="btn btn-primary"><i class="far fa-paper-plane"></i></button>
     </form>
